@@ -39,7 +39,7 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="form.html">회원가입</a></li>
+					<li><a href="#">회원가입</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -48,7 +48,24 @@
 	</nav>
 
 
-	<h1>Hello, world!</h1>
+	<form>
+		<div class="form-group">
+			<label for="userId">사용자 아이디</label> <input
+				type="text" class="form-control" id="userId"
+				placeholder="userId">
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label> <input
+				type="password" class="form-control" id="password"
+				placeholder="Password">
+		</div>
+		<div class="form-group">
+			<label for="name">이름</label> <input
+				type="text" class="form-control" id="name"
+				placeholder="Name">
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="/webjars/jquery/3.1.0/dist/jquery.min.js"></script>
