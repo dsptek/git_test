@@ -34,6 +34,26 @@ public class User {
 		this.email = email;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
 	public void update(User newUser) {
 		this.password = newUser.password;
 		this.name = newUser.name;
