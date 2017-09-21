@@ -38,7 +38,7 @@ public class User {
 		if(newId == null) {
 			return false;
 		}
-		return newId.equals(newId);
+		return newId.equals(id);
 	}
 	
 	public boolean matchPassword(String newPassword) {
