@@ -1,7 +1,5 @@
 package net.slipp.web;
 
-import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.slipp.domain.Question;
@@ -80,20 +77,6 @@ public class QuestionController {
 		}
 		
 		return Result.ok();
-	}
-	
-	// 예외 처리
-	private boolean hasPermission(HttpSession session, Question question) {
-		if(HttpSessionUtils.isLoginUser(session)) {
-			throw new IllegalStateException("로그인이 필요합니다.");
-		}
-		
-		User loginUser = HttpSessionUtils.getUserFromSession(session);
-		if(question.isSameWriter(loginUser)) {
-			throw new IllegalStateException("자신이 쓴 글만 수정, 석제가 가능합니다.");
-		}
-		
-		return true;
 	}
 	
 	// 질문 수정
